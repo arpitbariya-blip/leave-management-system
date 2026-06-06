@@ -1,0 +1,6 @@
+# Only allow POST requests to AJAX endpoints
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_METHOD} !POST
+    RewriteRule .* - [F,L]
+</IfModule>

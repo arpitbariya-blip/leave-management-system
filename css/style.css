@@ -1,0 +1,110 @@
+body{ font-family: arial,helvetica; }
+h1{ text-align: center;line-height: 45px}
+*{
+  box-sizing:border-box;
+}
+.box{
+  width: 230px;
+  height: 250px;
+  background: #fff;
+  border-radius: 25spx;
+  box-shadow: 0 0 5px #bababa;
+  overflow: hidden;
+  position : relative;
+  margin: 10px auto;
+}
+.box img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.box .box-content{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  left:0;
+}
+.box .box-content:before,
+.box .box-content:after{
+  content:"";
+  width: 95%;
+  height: 47%;
+  background: #E01E48;
+  position:absolute;
+  left:0;
+  right:0;
+  margin: auto;
+  transition: all 0.5s;
+  opacity: 0;
+}
+.box .box-content:before{
+  top: -20%;
+}
+.box .box-content:after{
+  bottom: -20%;
+}
+.box:hover .box-content:before{
+  top: 3%;
+  opacity: 0.8;
+}
+.box:hover .box-content:after{
+  bottom: 3%;
+  opacity: 0.8;
+}
+.box .content{
+  width: 50%;
+  height: 45px;
+  position: absolute;
+  top : 0;
+  bottom : 0;
+  left: 0 ;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  z-index: 1;
+  transform: rotate(90deg);
+  opacity: 0;
+  transition: all 0.5s;
+}
+.box:hover .content{
+  opacity:1;
+  transform: rotate(0deg);
+}
+.box .social{
+  padding: 0;
+  margin: 0 0 20px 0;
+  list-style : none;
+}
+.box .social li{
+  display: inline-block;
+  margin-right: 10px;
+}
+.box .social li a{
+  color: #000;
+  background: #fff;
+  display: block;
+  width: 35px;
+  height: 35px;
+  line-height: 35px;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: all 0.3s;
+}
+.box .social li a:hover{
+  color: #E01E48;
+}
+.box .social li a .fa{
+ line-height: 35px;   
+}
+.box .title{
+  color: #fff;
+  font-size: 22px;
+  margin-bottom: 7px;
+  text-transform : capitalize;
+}
+.box .post{
+  color: #fff;
+  font-sze: 14px;
+  text-transform : capitalize;
+}

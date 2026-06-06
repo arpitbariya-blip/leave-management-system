@@ -1,0 +1,8 @@
+# Deny direct browser access to tools - only allow from internal PHP include
+Order deny,allow
+Deny from all
+
+<FilesMatch "DataBaseBackup\.php$">
+    Order allow,deny
+    Allow from all
+</FilesMatch>

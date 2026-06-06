@@ -1,0 +1,27 @@
+Options -Indexes
+ServerSignature Off
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Block access to includes directory
+    RewriteRule ^includes/.*$ - [F,L]
+
+    # Block direct access to tools except allowed
+    RewriteRule ^tools/Mysqldump\.php$ - [F,L]
+</IfModule>
+
+# Block access to git directory
+<FilesMatch "^\.git">
+    Order deny,allow
+    Deny from all
+</FilesMatch>
+
+# Block sensitive extensions
+<FilesMatch "\.(py|sh|sql|log)$">
+    Order deny,allow
+    Deny from all
+</FilesMatch>
+
+# Disable error display in production
+php_flag display_errors Off
